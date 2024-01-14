@@ -4,8 +4,6 @@ import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://astropost.io",
@@ -23,6 +21,4 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
   ],
-  output: "server",
-  adapter: netlify(),
 });

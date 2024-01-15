@@ -1,4 +1,8 @@
 // FLEX BOX
+.d-none {
+  display: none;
+}
+
 .flex {
   display: flex;
 }
@@ -96,6 +100,10 @@
 }
 
 @media (--sm) {
+  .d-sm-none {
+    display: none;
+  }
+
   .flex-sm-row {
     flex-direction: row;
   }
@@ -186,6 +194,10 @@
 }
 
 @media (--md) {
+  .d-md-none {
+    display: none;
+  }
+
   .flex-md-row {
     flex-direction: row;
   }
@@ -276,6 +288,10 @@
 }
 
 @media (--lg) {
+  .d-lg-none {
+    display: none;
+  }
+
   .flex-lg-row {
     flex-direction: row;
   }
@@ -366,6 +382,10 @@
 }
 
 @media (--xl) {
+  .d-xl-none {
+    display: none;
+  }
+
   .flex-xl-row {
     flex-direction: row;
   }
@@ -456,6 +476,10 @@
 }
 
 @media (--xxl) {
+  .d-xxl-none {
+    display: none;
+  }
+
   .flex-xxl-row {
     flex-direction: row;
   }

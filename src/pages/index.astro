@@ -4,46 +4,26 @@ import { Icon } from 'astro-icon';
 
 // Layout imports
 import MainLayout from "../layouts/MainLayout.astro";
+
+// Component imports
+import HeroHalfCover from '../components/heroes/HeroHalfCover.astro';
 import Button from '../components/Button.astro';
 
 // Image imports
 import { Image } from 'astro:assets';
 import profileImage from "../img/nb-new.jpg";
+import homeHero from "../img/home-hero.png";
 ---
 
 <MainLayout
-  title="NickBravo.dev - Designer. Developer. Problem solver."
-  description="I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms."
-  og_image="https://nickbravo.com/images/opengraph.png"
-  og_url="https://nickbravo.dev/"
+  title="Websites. Graphics. Content. For businesses who respect privacy. - Astropost"
+  description="We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy."
+  og_image="https://astropost.io/images/opengraph.png"
+  og_url="https://astropost.io/"
 >
   <main>
 
-  <!-- Hero section -->
-    <section id="home" class="">
-      <div class="container">
-        <!-- Hero text -->
-        <div class="grid-2">
-          <div>
-            <p class="superheading">Nick Bravo.</p>
-            <h1>Designer. Developer. Problem solver.</h1>
-            <div class="hr-div"></div>
-            <p class="subheading">
-              I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms.
-            </p>
-            <!-- CTA buttons -->
-            <div class="flex gap">
-              <Button href="contact" />
-              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
-            </div>
-          </div>
-          <!-- Hero image SVG -->
-          <div class="hero-image">
-            <Icon name="nickbravodev" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <HeroHalfCover />
 
     <!-- About section -->
     <section id="about">
@@ -75,7 +55,7 @@ import profileImage from "../img/nb-new.jpg";
           </div>
           <!-- Profile photo. Yes, it's really a photo of me! -->
           <div class="section__aside">
-            <Image src={profileImage} class="profile-image" alt="A Genuine Photo of Nick Bravo." format="webp" />
+            <Image src={profileImage} class="profile-image" alt="Nick Bravo." format="webp" />
           </div>
         <!-- </div> -->
       </div>

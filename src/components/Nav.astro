@@ -13,10 +13,12 @@ import navData from '../data/navData';
 ---
     <header>
       <!-- Brand logo SVG -->
-      <a class="nav-logo" href="/" aria-label="Nick Bravo Home">
-        <Icon name="nickbravodev" />
+      <a class="nav-logo" href="/" aria-label="Astropost Home">
+        <div class="logo-box">
+          <Icon name="astropost-logo" />
+        </div>
         <!-- Brand name -->
-        <span class="brand-text">Nick Bravo</span>
+        <span class="brand-text">Astropost</span>
       </a> 
 
       <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
@@ -54,9 +56,9 @@ import navData from '../data/navData';
       navToggle.setAttribute('aria-expanded', 'true'); 
       document.body.classList.add('modal-open'); // Disables scrolling behavior on body
     } else if (visibility === 'true') {
-      primaryNav.setAttribute('data-visible', 'true'); // Opens NAV popout
-      navToggle.setAttribute('aria-expanded', 'true'); 
-      document.body.classList.add('modal-open'); // Disables scrolling behavior on body
+      primaryNav.setAttribute('data-visible', 'false'); // Opens NAV popout
+      navToggle.setAttribute('aria-expanded', 'false'); 
+      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
     }
 
   });

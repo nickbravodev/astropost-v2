@@ -6,18 +6,20 @@ import Footer from "../components/Footer.astro";
 
 // Style import
 import "../css/global.scss";
+import LightDarkToggle from "../components/LightDarkToggle.astro";
 
 const {
-  title = "NickBravo.dev - Designer. Developer. Problem solver.",
-  description = "I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms.",
-  og_image = "https://nickbravo.com/images/opengraph.png",
-  og_url = "https://nickbravo.dev/",
+  title = "Websites. Graphics. Content. For businesses who respect privacy. - Astropost",
+  description = "We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy.",
+  og_image = "https://astropost.io/images/opengraph.png",
+  og_url = "https://astropost.io/",
 } = Astro.props;
 ---
 
 <html lang="en" prefix="og: https://ogp.me/ns#">
   <MainHead {title} {description} {og_image} {og_url} />
   <body>
+    <LightDarkToggle />
     <Nav />
     <slot />
     <Footer />

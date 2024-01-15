@@ -3,14 +3,36 @@
 // -----------
 @mixin nav-light-mode {
   // Nav variables
-  --color-nav-bg: var(--mav-red); // Nav Background
+  --color-nav-bg: rgba(var(--color-astro-black-rgb), 0.85); // Nav Background
+  --color-nav-bg-solid: rgba(var(--color-astro-black-rgb), 1); // Nav Background
   --color-nav-btn-bg-hover: var(
-    --bravo-dark-900
+    --color-astro-white
   ); // Nav Button Hover Background
-  --color-nav-link-color: var(--bravo-light-200);
-  --color-nav-link-hover-color: var(--bravo-light-100);
-  --color-nav-link-button-hover-color: var(--bravo-dark-900);
+  --color-nav-link-color: var(--color-astro-white);
+  --color-nav-link-hover-color: var(--color-astro-white);
+  --color-nav-link-button-hover-color: var(--color-astro-black);
   --brand-icon: var(--bravo-light-100); // Brand Icon Color
+  --color-logo-box: var(--color-astro-black);
+}
+
+// -----------
+// DARK MODE VARIABLES
+// -----------
+@mixin nav-dark-mode {
+  // Nav variables
+  --color-nav-bg: rgba(var(--color-astro-black-rgb), 0.85); // Nav Background
+  --color-nav-bg-solid: rgba(
+    var(--color-astro-black-rgb),
+    0.85
+  ); // Nav Background
+  --color-nav-btn-bg-hover: var(
+    --color-astro-white
+  ); // Nav Button Hover Background
+  --color-nav-link-color: var(--color-astro-white);
+  --color-nav-link-hover-color: var(--color-astro-white);
+  --color-nav-link-button-hover-color: var(--color-astro-black);
+  --brand-icon: var(--mav-red); // Brand Icon Color
+  --color-logo-box: var(--color-astro-red);
 }
 // Execute Light Mode
 @media (prefers-color-scheme: light) {
@@ -20,21 +42,6 @@
 }
 :root[data-theme="light"] {
   @include nav-light-mode;
-}
-
-// -----------
-// DARK MODE VARIABLES
-// -----------
-@mixin nav-dark-mode {
-  // Nav variables
-  --color-nav-bg: rgba(var(--bravo-dark-900-rgb), 0.85); // Nav Background
-  --color-nav-btn-bg-hover: var(
-    --bravo-light-100
-  ); // Nav Button Hover Background
-  --color-nav-link-color: var(--bravo-light-200);
-  --color-nav-link-hover-color: var(--bravo-light-100);
-  --color-nav-link-button-hover-color: var(--bravo-dark-900);
-  --brand-icon: var(--mav-red); // Brand Icon Color
 }
 // Execute Dark Mode
 @media (prefers-color-scheme: dark) {
@@ -48,7 +55,7 @@
 
 // NAV Variables
 :root {
-  --nav-min-height: 5.5rem;
+  --nav-min-height: 4rem;
 }
 
 header {
@@ -60,8 +67,9 @@ header {
   min-height: var(--nav-min-height);
   justify-content: space-between;
   z-index: 1000;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
   flex-direction: row;
+  // border-bottom: 0.25rem solid var(--color-astro-red);
 
   @media (--lg) {
     padding-inline: 3.5rem;
@@ -78,7 +86,7 @@ header {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: var(--color-nav-bg);
+    background-color: var(--color-nav-bg-solid);
     backdrop-filter: blur(0.7rem);
     -webkit-backdrop-filter: blur(0.7rem);
     z-index: -1;
@@ -131,6 +139,7 @@ header {
 
   li {
     display: flex;
+    width: 100%;
     position: relative;
     outline: none;
     padding: 0;
@@ -141,7 +150,11 @@ header {
     justify-content: center;
 
     a {
-      display: inline-flex;
+      height: 2rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: row;
       flex-wrap: nowrap;
       gap: 0.25rem;
@@ -149,18 +162,30 @@ header {
       text-decoration: inherit;
       transition: all 150ms ease-in-out;
 
+      @media (--lg) {
+        height: 4rem;
+        display: inline-flex;
+      }
+
       &::after {
         content: "";
         opacity: 1;
-        background: var(--color-nav-link-hover-color);
+        background: var(--color-astro-red);
         position: absolute;
+        bottom: 0;
         display: inline-block;
-        width: 0%;
-        height: 0.15rem;
-        margin-top: 1.5rem;
-        z-index: 1;
+        width: 100%;
+        height: 0rem;
+        margin-top: 1rem;
+        z-index: -1;
         top: 0;
-        transition: width 150ms ease-out;
+        transition: all 150ms ease-out;
+        border-radius: var(--border-radius-pill);
+
+        @media (--lg) {
+          background: var(--color-nav-link-hover-color);
+          margin-top: 0rem;
+        }
       }
 
       &:hover,
@@ -168,23 +193,29 @@ header {
         color: var(--color-nav-link-hover-color);
         text-decoration: none;
         outline: none;
+
+        @media (--lg) {
+          margin-top: 0rem;
+        }
       }
 
       &:hover::after,
       &:focus::after {
         width: 100%;
+        height: 1rem;
 
         @media (--lg) {
-          margin-top: 1.7rem;
+          height: 0.2rem;
         }
       }
     }
 
     &:last-of-type > a {
+      height: auto;
       color: var(--color-nav-link-color);
       cursor: pointer;
       border: var(--border-width) solid var(--color-nav-link-color);
-      border-radius: var(--border-radius);
+      border-radius: var(--border-radius-pill);
       padding: 0.5rem 2rem;
       transition: 150ms ease-in-out;
       display: flex;
@@ -198,6 +229,7 @@ header {
 
         &:after {
           width: 0%;
+          height: 0rem;
         }
       }
     }
@@ -210,8 +242,8 @@ header {
   @media (--md-max) {
     display: block;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.25rem;
+    right: 0rem;
     color: var(--color-nav-link-color);
     background: none;
     border: 0;
@@ -247,17 +279,30 @@ header {
   justify-content: flex-start;
   // margin-inline-start: 2rem;
 
+  .logo-box {
+    height: 2rem;
+    background-color: none;
+    // background-color: var(--color-logo-box);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    // border-radius: var(--border-radius-sm);
+  }
+
   svg {
-    height: 3.5rem;
+    height: 100%;
     width: auto;
+    margin: 0;
   }
 
   // &:hover,
   &:focus-visible {
     text-decoration: none;
     outline: var(--border-width) solid var(--color-nav-link-hover-color);
-    outline-offset: 0.25rem;
-    border-radius: 0.1rem;
+    outline-offset: 0.75rem;
+    border-radius: 50rem;
   }
 }
 

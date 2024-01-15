@@ -1,5 +1,36 @@
+// LIGHT MODE VARIABLES
+@mixin nav-light-mode {
+  --color-divider: var(--color-astro-red);
+  --color-divider-variant: var(--color-astro-dark-gray);
+}
+
+// DARK MODE VARIABLES
+@mixin nav-dark-mode {
+  --color-divider: var(--color-astro-red);
+  --color-divider-variant: var(--color-astro-light-gray);
+}
+
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include nav-light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include nav-light-mode;
+}
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include nav-dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include nav-dark-mode;
+}
+
 .hr-div {
-  height: 0.15rem;
+  height: 0.2rem;
   width: 9rem;
   background-color: var(--color-divider);
   margin: 1.5rem 0;
@@ -7,6 +38,6 @@
 
 .hr-div-dark {
   @extend .hr-div;
-  background-color: $bravo-dark-700;
+  background-color: var(--color-divider-variant);
   margin: 1.5rem auto;
 }

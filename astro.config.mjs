@@ -1,8 +1,10 @@
 import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
-import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
+// import lighthouse from "astro-lighthouse";
 // import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
@@ -11,9 +13,10 @@ export default defineConfig({
   // adapter: netlify(),
   site: "https://astropost.io",
   integrations: [
+    react(),
+    mdx(),
     sitemap(),
     robotsTxt(),
-    mdx(),
     htmlBeautifier({
       indent_size: 2,
       end_with_newline: true,
@@ -24,4 +27,5 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
   ],
+  // lighthouse(),
 });

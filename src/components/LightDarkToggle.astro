@@ -5,10 +5,10 @@ import { Icon } from 'astro-icon';
 
     <aside class="theme-wrapper">
       <div class="theme-container" role="group">
-        <button id="toggle-light" class="theme" aria-label="Apply Light Mode" data-theme="light">
+        <button id="toggle-light" class="theme" aria-label="Lights On" data-theme="light">
           <Icon name="light-mode-toggle" height="24" width="24" />
         </button>
-        <button id="toggle-dark" class="theme" aria-label="Apply Dark Mode" data-theme="dark">
+        <button id="toggle-dark" class="theme" aria-label="Lights Off" data-theme="dark">
           <Icon name="dark-mode-toggle" height="24" width="24" />
         </button>
       </div>
@@ -22,12 +22,12 @@ import { Icon } from 'astro-icon';
   const toggleButtonDisplay = () => {
     if (document.documentElement.getAttribute('data-theme') === 'dark') {
       // Dark
-      document.getElementById('toggle-dark').classList.add('d-none');
-      document.getElementById('toggle-light').classList.remove('d-none');
+      document.getElementById('toggle-dark').classList.add('toggle-off');
+      document.getElementById('toggle-light').classList.remove('toggle-off');
     } else if (document.documentElement.getAttribute('data-theme') === 'light') {
       // Light
-      document.getElementById('toggle-light').classList.add('d-none');
-      document.getElementById('toggle-dark').classList.remove('d-none');
+      document.getElementById('toggle-light').classList.add('toggle-off');
+      document.getElementById('toggle-dark').classList.remove('toggle-off');
     }
   }
 // END TOGGLE BUTTON DISPLAY FUNCTION
@@ -40,12 +40,12 @@ import { Icon } from 'astro-icon';
   const setColorScheme = e => {
     if (e.matches) {
       // Dark
-      document.getElementById('toggle-dark').classList.add('d-none');
-      document.getElementById('toggle-light').classList.remove('d-none');
+      document.getElementById('toggle-dark').classList.add('toggle-off');
+      document.getElementById('toggle-light').classList.remove('toggle-off');
     } else {
       // Light
-      document.getElementById('toggle-light').classList.add('d-none');
-      document.getElementById('toggle-dark').classList.remove('d-none');
+      document.getElementById('toggle-light').classList.add('toggle-off');
+      document.getElementById('toggle-dark').classList.remove('toggle-off');
     }
   }
   
@@ -61,7 +61,7 @@ import { Icon } from 'astro-icon';
   const handleThemeChange = (e) => {
     const theme = e.currentTarget.dataset.theme;
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('maverikColorTheme', theme);
+    localStorage.setItem('astroColorTheme', theme);
     toggleButtonDisplay();
     
   }
@@ -73,7 +73,7 @@ import { Icon } from 'astro-icon';
 // USER PREFERENCE STORAGE
   // Store user preference
   window.addEventListener('DOMContentLoaded', () => {
-    const theme = localStorage.getItem('maverikColorTheme');
+    const theme = localStorage.getItem('astroColorTheme');
     theme && document.documentElement.setAttribute('data-theme', theme);
     toggleButtonDisplay();
   })
@@ -125,5 +125,9 @@ import { Icon } from 'astro-icon';
       opacity: 1;
       transform: translateY(0%);
     }
+  }
+
+  .toggle-off {
+    display: none;
   }
 </style>

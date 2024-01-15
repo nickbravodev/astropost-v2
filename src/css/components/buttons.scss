@@ -3,16 +3,16 @@
 // -----------
 @mixin buttons-light-mode {
   // Primary Button Colors
-  --color-btn-primary: var(--bravo-light-100);
-  --color-btn-primary-text: var(--bravo-light-100);
-  --color-btn-primary-text-hover: var(--bravo-light-100);
-  --color-btn-primary-hover: var(--bravo-dark-900);
+  --color-btn-primary: var(--color-astro-black);
+  --color-btn-primary-text: var(--color-astro-white);
+  --color-btn-primary-text-hover: var(--color-astro-white);
+  --color-btn-primary-hover: var(--color-astro-black);
   // Outline Button Color
-  --color-btn-outline: var(--color-btn-primary-text-hover);
+  --color-btn-outline: var(--color-btn-primary-hover);
   // Secondary Button Colors
-  --color-btn-secondary: var(--bravo-light-100);
-  --color-btn-secondary-text: var(--bravo-dark-900);
-  --color-btn-secondary-hover: var(--bravo-dark-900);
+  --color-btn-secondary: var(--color-astro-white);
+  --color-btn-secondary-text: var(--color-astro-black);
+  --color-btn-secondary-hover: var(--color-astro-white);
 }
 // Execute Light Mode
 @media (prefers-color-scheme: light) {
@@ -29,17 +29,17 @@
 // -----------
 @mixin buttons-dark-mode {
   // Primary Button Colors
-  --color-btn-primary: var(--bravo-light-100);
-  --color-btn-primary-text: var(--bravo-dark-900);
-  --color-btn-primary-text-hover: var(--bravo-dark-900);
-  --color-btn-primary-hover: var(--bravo-light-100);
+  --color-btn-primary: var(--color-astro-white);
+  --color-btn-primary-text: var(--color-astro-black);
+  --color-btn-primary-text-hover: var(--color-astro-black);
+  --color-btn-primary-hover: var(--color-astro-white);
   // Outline Button Color
-  --color-btn-outline: var(--bravo-light-100);
+  --color-btn-outline: var(--color-astro-white);
   // Secondary Button Colors
-  --color-btn-secondary: var(--bravo-light-100);
-  --color-btn-secondary-text: var(--bravo-dark-900);
-  --color-btn-secondary-text-hover: var(--bravo-light-100);
-  --color-btn-secondary-hover: var(--bravo-dark-900);
+  --color-btn-secondary: var(--color-astro-white);
+  --color-btn-secondary-text: var(--color-astro-black);
+  --color-btn-secondary-text-hover: var(--color-astro-white);
+  --color-btn-secondary-hover: var(--color-astro-black);
 }
 // Execute Dark Mode
 @media (prefers-color-scheme: dark) {
@@ -57,9 +57,9 @@ input[type="submit"],
 .button {
   color: var(--color-btn-primary-text);
   background-color: var(--color-btn-primary);
-  border: 2px solid var(--color-btn-primary);
+  border: var(--border-width) solid var(--color-btn-primary);
   padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-pill);
   font-family: var(--font-family-base);
   font-weight: bold;
   text-decoration: none;

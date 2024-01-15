@@ -1,5 +1,34 @@
+// LIGHT MODE VARIABLES
+@mixin footer-light-mode {
+  --color-social-icon: var(--color-astro-white);
+}
+
+// DARK MODE VARIABLES
+@mixin footer-dark-mode {
+  --color-social-icon: var(--color-astro-white);
+}
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include footer-light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include footer-light-mode;
+}
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include footer-dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include footer-dark-mode;
+}
+
 footer {
-  background-color: var(--color-bg);
+  background-color: var(--color-astro-black);
+  // background-color: var(--color-bg);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,6 +36,12 @@ footer {
   align-items: center;
   justify-content: center; // space out brand from logo
   padding: 3rem 2rem;
+
+  .copyright {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--color-astro-white);
+  }
 }
 
 .footer-social {
@@ -20,29 +55,24 @@ footer {
     text-decoration: none;
 
     &:focus-visible {
-      outline: 2px solid var(--color-nav-link-hover-color);
+      outline: 2px solid var(--color-social-icon);
       outline-offset: 0.25rem;
       border-radius: 0.25rem;
 
       & > svg {
-        color: var(--color-nav-link-hover-color);
+        color: var(--color-social-icon);
       }
     }
   }
 
   svg {
-    color: var(--color-nav-link-color);
+    color: var(--color-social-icon);
     width: 1.5rem;
 
     &:hover,
     &:focus {
-      color: var(--color-nav-link-hover-color);
+      color: var(--color-social-icon);
     }
-  }
-
-  .copyright {
-    font-size: 0.9rem;
-    margin-top: 1.5rem;
   }
 
   // .social {

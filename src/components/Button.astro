@@ -5,10 +5,16 @@ import { Icon } from 'astro-icon/components';
 // Reusable Common Buttons ( based on href Prop - ie: <Button href="loyalty" /> )
 const commonButtonData = [
   {
+    slug: "start",
+    text: "Start your project",
+    href: "#start-project",
+    // type: "outline"
+  },
+  {
     slug: "contact",
     text: "Contact Me",
     href: "#contact",
-    type: "outline"
+    // type: "outline"
   },
   {
     slug: "resume",
@@ -81,10 +87,8 @@ const buttonClasses = ( !classes && buttonCompare ? buttonCompare.classes : clas
 
 <a href={buttonHref}
 target={buttonTarget}
-tabindex="0"
 aria-label={buttonText}
 aria-roledescription={buttonText}
-role="button"
 class:list={[
   "button",
   buttonClasses,

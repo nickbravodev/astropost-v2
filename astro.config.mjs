@@ -5,13 +5,13 @@ import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import htmlBeautifier from "astro-html-beautifier";
 import icon from "astro-icon";
+import netlify from "@astrojs/netlify";
 // import lighthouse from "astro-lighthouse";
-// import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
-  // adapter: netlify(),
+  output: "server",
+  adapter: netlify(),
   site: "https://astropost.io",
   integrations: [
     icon(),

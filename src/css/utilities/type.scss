@@ -1,3 +1,8 @@
+:root {
+  --font-family-base: proxima-nova, sans-serif;
+  --font-size-base: 1rem;
+}
+
 h1,
 h2,
 h3,
@@ -16,7 +21,7 @@ p {
 }
 
 h1 {
-  font-size: $font-size-base * 3;
+  font-size: calc(var(--font-size-base) * 3);
   font-weight: 900;
   // line-height: 1.2;
 }
@@ -31,7 +36,7 @@ h2 {
 
 .superheading {
   font: 700 2rem/130% var(--font-family-base), sans-serif;
-  color: $bravo-light-100;
+  color: var(--color-txt-heading);
   margin-bottom: var(--spacer);
 }
 

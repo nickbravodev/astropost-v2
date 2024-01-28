@@ -3,12 +3,12 @@
 // -----------
 @mixin buttons-light-mode {
   // Primary Button Colors
-  --color-btn-primary: var(--color-astro-black);
   --color-btn-primary-text: var(--color-astro-white);
+  --color-btn-primary: var(--color-astro-black);
   --color-btn-primary-text-hover: var(--color-astro-white);
-  --color-btn-primary-hover: var(--color-astro-black);
+  --color-btn-primary-hover: var(--color-astro-red);
   // Outline Button Color
-  --color-btn-outline: var(--color-btn-primary-hover);
+  --color-btn-outline: var(--color-astro-black);
   // Secondary Button Colors
   --color-btn-secondary: var(--color-astro-white);
   --color-btn-secondary-text: var(--color-astro-black);
@@ -20,10 +20,10 @@
 // -----------
 @mixin buttons-dark-mode {
   // Primary Button Colors
-  --color-btn-primary: var(--color-astro-white);
   --color-btn-primary-text: var(--color-astro-black);
-  --color-btn-primary-text-hover: var(--color-astro-black);
-  --color-btn-primary-hover: var(--color-astro-white);
+  --color-btn-primary: var(--color-astro-white);
+  --color-btn-primary-text-hover: var(--color-astro-white);
+  --color-btn-primary-hover: var(--color-astro-red);
   // Outline Button Color
   --color-btn-outline: var(--color-astro-white);
   // Secondary Button Colors

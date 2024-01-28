@@ -24,6 +24,10 @@ const navData = [
     path: "#contact",
   },
   {
+    name: "Blog",
+    path: "/blog/",
+  },
+  {
     name: "Resume",
     path: "#resume",
   },

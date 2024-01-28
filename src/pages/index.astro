@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 // Library imports
 import { Icon } from 'astro-icon/components';
 
@@ -6,9 +8,8 @@ import { Icon } from 'astro-icon/components';
 import MainLayout from "../layouts/MainLayout.astro";
 
 // Component imports
-import HeroHalfCover from '../components/heroes/HeroHalfCover.astro';
 import HeroFull from '../components/heroes/HeroFull.astro';
-import Button from '../components/Button.astro';
+// import Button from '../components/Button.astro';
 
 // Image imports
 import { Image } from 'astro:assets';
@@ -24,86 +25,14 @@ import homeHero from "../img/home-hero.png";
 >
   <main>
 
-    <HeroFull />
-    <!-- <HeroHalfCover /> -->
-
-    <!-- About section -->
-    <section id="about">
-      <div class="container flex-md-row-reverse">
-        <!-- <div class="row flex flex-row-reverse align-items-start justify-content-center"> -->
-          <!-- About text -->
-          <div class="section__body flex flex-column">
-            <h2>Career change from cop to web developer? Don't mind if I do!</h2>
-            <div class="hr-div"></div>
-            <p>Short version? I recently made a career change from a full-time cop / part-time designer and developer back to a full-time designer and developer.</p>
-            <p>I worked full-time as a graphic and web designer for two years before working in law enforcement. I worked on a lot of freelance web development projects during my decade-and-a-half law enforcement career.</p>
-            <p class="mb-4">
-              Long version? My official biography is set to be released in 2552.
-            </p> <!-- IYKYK -->
-            <!-- CTA buttons -->
-            <div class="flex gap">
-              <Button href="contact" />
-              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
-              <!-- <a class="cta me-2" href="#contact">Contact me</a>
-              <a
-                class="cta"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#resume"
-                aria-controls="resume"
-                href="#"
-                >Resume</a
-              > -->
-            </div>
-          </div>
-          <!-- Profile photo. Yes, it's really a photo of me! -->
-          <div class="section__aside">
-            <Image src={profileImage} class="profile-image" alt="Nick Bravo." format="webp" />
-          </div>
-        <!-- </div> -->
-      </div>
-    </section>
-
-    <!-- Scope section -->
-    <section id="scope">
-      <div class="container">
-        <div class="section__body">
-          <!-- Scope main text -->
-          <h2>Languages & frameworks.</h2>
-          <div class="hr-div"></div>
-          <p class="subheading">
-            I've been designing graphics, layouts, and brand assets with Adobe software, and developing websites using HTML, CSS, and JS since 2004 - you know, back when MySpace was popular. I have a solid mastery of Adobe XD, Illustrator, InDesign, and Photoshop.
-          </p>
-          <p>
-            <code>Adobe CC, VS Code, Bootstrap, WordPress, Webflow</code>
-          </p>
-          <div class="flex gap">
-            <Button href="contact" />
-            <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
-            <!-- <a class="cta me-2" href="#contact">Contact me</a>
-            <a
-              class="cta"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#resume"
-              aria-controls="resume"
-              href="#"
-              >Resume</a
-            > -->
-          </div>
-        </div>
-          <!-- Scope detail text -->
-          <div class="section__aside">
-            <h3 class="mb-1">Design</h3>
-            <p>Adobe XD, Illustrator, InDesign, Photoshop, Figma.</p>
-            <h3 class="mb-1">Frontend</h3>
-            <p>HTML, CSS, JavaScript.</p>
-            <h3 class="mb-1">Backend</h3>
-            <p>Node.js, Express, MongoDB.</p>
-            <h3 class="mb-1">Libraries & Builders</h3>
-            <p>Bootstrap, Webflow, WordPress.</p>
-          </div>
-        <!-- </div> -->
-      </div>
-    </section>
+    <HeroFull
+      id="home"
+      heading="Websites and content. <br /> Privacy-focused websites that drive results."
+      p1="We build privacy-focused websites that drive outcomes and solidify brand authority and trust across platforms. All while protecting your users' privacy."
+      image={homeHero}
+      image_alt="Astropost Portfolio Show"
+      button_primary_link="start"
+    />
 
     <!-- Portfolio section -->
     <section id="work" class="section__variant">

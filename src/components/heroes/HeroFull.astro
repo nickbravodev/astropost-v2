@@ -8,12 +8,12 @@ import homeHero from "../../img/home-hero.png";
 ---
 
   <!-- Hero section -->
-    <section id="home" class="p-0">
+    <section id="home">
       <!-- <div class="container"> -->
-        <div class="half-cover-wrapper">
+        <div class="hero-full">
           
           <!-- Hero text -->
-          <div class="hero-half-text">
+          <div>
             <!-- <p class="superheading">Nick Bravo.</p> -->
             <h1>Websites and content. For businesses that respect privacy.</h1>
             <div class="hr-div"></div>
@@ -21,22 +21,80 @@ import homeHero from "../../img/home-hero.png";
               We build privacy-focused websites, visual identities, graphics, video content, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy.
             </p>
             <!-- CTA buttons -->
-            <div class="flex gap">
+            <div class="flex gap-3">
               <Button href="contact" />
               <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
             </div>
           </div>
 
           <!-- Hero image -->
-          <div class="hero-half-image">
             <Image src={homeHero} alt="Collection of projects." format="webp" />
-          </div>
 
         </div>
       <!-- </div> -->
     </section>
 
     <style lang="scss">
+      @mixin hero-full-light-mode {
+        --color-hero-grad-heavy: rgba(var(--color-astro-white-rgb), 0.98);
+        --color-hero-grad-light: rgba(var(--color-astro-white-rgb), 0.3);
+      }
+
+      // -----------
+      // DARK MODE VARIABLES
+      // -----------
+      @mixin hero-full-dark-mode {
+        --color-hero-grad-heavy: rgba(var(--color-astro-black-rgb), 0.98);
+        --color-hero-grad-light: rgba(var(--color-astro-black-rgb), 0.3);
+      }
+      // Execute Light Mode
+      @media (prefers-color-scheme: light) {
+        :root {
+          @include hero-full-light-mode;
+        }
+      }
+      :root[data-theme="light"] {
+        @include hero-full-light-mode;
+      }
+      // Execute Dark Mode
+      @media (prefers-color-scheme: dark) {
+        :root {
+          @include hero-full-dark-mode;
+        }
+      }
+      :root[data-theme="dark"] {
+        @include hero-full-dark-mode;
+      }
+
+
+      section {
+        margin-block-start: var(--nav-min-height);
+      }
+      section > div {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        min-height: clamp(30rem, 50vw, 50rem);
+        display: flex;
+        align-items: center;
+        padding-inline: 3rem;
+        padding-block: 5rem;
+        justify-content: flex-start;
+        background: linear-gradient(70deg, var(--color-hero-grad-heavy) 45%, var(--color-hero-grad-light));
+        min-width: 100%;
+
+        & > div {
+          max-width: 50rem;
+        }
+
+        & img {
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
       .half-cover-wrapper {
         display: flex;
         flex-direction: column;

@@ -1,12 +1,13 @@
 ---
 // Library imports
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 // Layout imports
 import MainLayout from "../layouts/MainLayout.astro";
 
 // Component imports
 import HeroHalfCover from '../components/heroes/HeroHalfCover.astro';
+import HeroFull from '../components/heroes/HeroFull.astro';
 import Button from '../components/Button.astro';
 
 // Image imports
@@ -23,7 +24,8 @@ import homeHero from "../img/home-hero.png";
 >
   <main>
 
-    <HeroHalfCover />
+    <HeroFull />
+    <!-- <HeroHalfCover /> -->
 
     <!-- About section -->
     <section id="about">

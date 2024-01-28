@@ -14,15 +14,6 @@
   --color-btn-secondary-text: var(--color-astro-black);
   --color-btn-secondary-hover: var(--color-astro-white);
 }
-// Execute Light Mode
-@media (prefers-color-scheme: light) {
-  :root {
-    @include buttons-light-mode;
-  }
-}
-:root[data-theme="light"] {
-  @include buttons-light-mode;
-}
 
 // -----------
 // DARK MODE VARIABLES
@@ -40,6 +31,15 @@
   --color-btn-secondary-text: var(--color-astro-black);
   --color-btn-secondary-text-hover: var(--color-astro-white);
   --color-btn-secondary-hover: var(--color-astro-black);
+}
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include buttons-light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include buttons-light-mode;
 }
 // Execute Dark Mode
 @media (prefers-color-scheme: dark) {

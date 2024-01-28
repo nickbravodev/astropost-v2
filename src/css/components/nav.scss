@@ -94,7 +94,7 @@ header {
 
   ul {
     display: flex;
-    gap: var(--gap);
+    gap: var(--spacer);
     align-items: center;
     justify-content: center;
     list-style: none;
@@ -102,7 +102,7 @@ header {
     margin: 0;
 
     @media (--md-max) {
-      gap: var(--gap-4);
+      gap: var(--spacer-4);
       height: 100vh;
       position: fixed;
       top: 0;

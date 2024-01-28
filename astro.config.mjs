@@ -4,6 +4,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import htmlBeautifier from "astro-html-beautifier";
+import icon from "astro-icon";
 // import lighthouse from "astro-lighthouse";
 // import netlify from "@astrojs/netlify";
 
@@ -13,6 +14,7 @@ export default defineConfig({
   // adapter: netlify(),
   site: "https://astropost.io",
   integrations: [
+    icon(),
     react(),
     mdx(),
     sitemap(),

@@ -9,6 +9,10 @@ section {
   // padding: 9rem;
 }
 
+section:first-of-type {
+  margin-block-start: var(--nav-min-height);
+}
+
 .section__variant {
   --color-divider: var(--color-divider-variant);
 
@@ -66,4 +70,8 @@ section {
 .container-fluid {
   @extend .container;
   max-width: 100%;
+}
+
+.text-block {
+  max-width: 45rem;
 }

@@ -24,7 +24,37 @@ const postsCollection = defineCollection({
     }),
 });
 
+const worksCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      client: z.string(),
+      title: z.string(),
+      categories: z.array(z.string()),
+      featured: z.boolean().default(false),
+      image: image(),
+      url: z.string().url().optional(),
+      date: z.string(),
+      tech: z.string().optional(),
+      blurb: z.string().optional(),
+    }),
+});
+
+const caseStudiesCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      client: z.string(),
+      title: z.string(),
+      url: z.string().url().optional(),
+      date: z.string(),
+      image: image(),
+      categories: z.array(z.string()),
+      featured: z.boolean().default(false),
+    }),
+});
+
 export const collections = {
   //   authors: authorsCollection,
+  works: worksCollection,
+  caseStudies: caseStudiesCollection,
   posts: postsCollection,
 };

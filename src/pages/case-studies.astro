@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+
+const caseStudies = await getCollection("caseStudies");
+// const caseStudies = await getCollection('caseStudies');
+---
+
+<ul>
+  {caseStudies.map(caseStudy => (
+    <li>
+      <a href={`/case-studies/${caseStudy.slug}`}>{caseStudy.data.title}</a>
+      <time datetime={caseStudy.data.publishedDate.toISOString()}>
+        {caseStudy.data.publishedDate.toDateString()}
+      </time>
+    </li>
+  ))}
+</ul>

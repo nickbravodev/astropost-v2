@@ -149,6 +149,12 @@ header {
     align-items: center;
     justify-content: center;
 
+    @media (--lg) {
+      width: auto;
+      height: 4rem;
+      display: inline-flex;
+    }
+
     a {
       height: 2rem;
       width: 100%;

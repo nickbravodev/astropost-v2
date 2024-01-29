@@ -1,0 +1,37 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+import Image from "astro/components/Image.astro";
+import { getEntryBySlug } from "astro:content";
+
+const { slug } = Astro.params;
+const work = await getEntryBySlug("works", slug as string);
+
+if ( !work ) {
+  return Astro.redirect('/404');
+}
+
+const {Content} = await work.render();
+---
+
+<MainLayout
+  title={work.data.title}
+  description="We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy."
+  og_image="https://astrowork.io/images/opengraph.png"
+  og_url="https://astrowork.io/blog/"
+>
+
+  <section>
+    <h1>{work.data.title}</h1>
+    <Image
+            src={work.data.image}
+            alt={work.data.title}
+            width={600}
+            height={600 / 1.5}
+            format="webp"
+            class="rounded-2xl shadow-xl mb-6 aspect-thumbnail object-cover"
+        />
+        <Content />
+  </section>
+
+</MainLayout>

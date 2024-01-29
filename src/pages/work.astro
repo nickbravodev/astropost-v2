@@ -1,18 +1,20 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
-import PostList from "../components/PostList.astro";
+import WorkList from "../components/WorkList.astro";
 
-const posts = await getCollection("posts");
+const works = await getCollection("works");
 ---
 
 <MainLayout
-  title="Blog - Astropost"
+  title="Work - Astropost"
   description="We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy."
   og_image="https://astropost.io/images/opengraph.png"
-  og_url="https://astropost.io/blog/"
+  og_url="https://astropost.io/work/"
 >
 
-  <PostList posts={posts} />
+<section>
+    <WorkList works={works} />
+</section>
 
 </MainLayout>

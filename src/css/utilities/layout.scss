@@ -6,11 +6,13 @@ section {
   justify-content: center;
   align-items: center;
   padding-inline: 5%;
+  padding-block: 5%;
   // padding: 9rem;
 }
 
 section:first-of-type {
   margin-block-start: var(--nav-min-height);
+  padding-block-start: 0;
 }
 
 .section__variant {

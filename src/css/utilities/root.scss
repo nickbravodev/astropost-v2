@@ -75,3 +75,11 @@ textarea,
 select {
   font: inherit;
 }
+
+img {
+  filter: var(--image-brightness) var(--image-contrast);
+
+  &.no-dim {
+    filter: brightness(100%) contrast(1);
+  }
+}

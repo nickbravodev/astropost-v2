@@ -1,0 +1,62 @@
+---
+
+---
+
+  <!-- Contact section -->
+    <section id="contact">
+      <div class="container">
+        <div class="col-md-6 col-lg-5 pe-md-5">
+          <!-- Contact text -->
+          <h2>Get in touch.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading">
+            Got a question? Send us a message.
+          </p>
+        </div>
+        <!-- Contact form -->
+        <div>
+          <form name="contact-form" id="contact-form" action="/success/" method="POST" data-netlify="true" data-netilfy-honeypot="bot-field" >
+            <!-- Robot honeypot. That rhymes! -->
+            <div class="d-none">
+              <label>
+                Robot honeypot: Leave this field empty if you're human
+                <input name="bot-field" />
+              </label>
+            </div>
+            <!-- Name input -->
+            <div class="mb-4">
+              <label class="form-label sr-only" for="name">Name</label>
+              <input class="form-control" type="text" id="name" name="name" placeholder="Name" required />
+            </div>
+            <!-- Email input -->
+            <div class="mb-4">
+              <label class="form-label sr-only" for="email">Email</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <!-- Message input -->
+            <div class="mb-4">
+              <label class="form-label sr-only" for="description">Message</label>
+              <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required></textarea>
+            </div>
+            <!-- Submit button -->
+            <div class="mb-4">
+              <button class="button outline">Send message</button>
+            </div>
+          </form>
+          <!-- Form success modal -->
+          <!-- <div class="modal fade" id="success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header bg-dark">
+                  <h5 class="modal-title form-success-title">Success!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-light form-success-text">
+                  Thanks! Your message is on it's way!
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>

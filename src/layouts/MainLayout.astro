@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 // Style import
 import "../css/global.scss";
 import LightDarkToggle from "../components/LightDarkToggle.astro";
+import GetStartedForm from "../components/forms/GetStartedForm.astro";
 
 const {
   title = "Websites. Graphics. Content. For businesses who respect privacy. - Astropost",
@@ -23,5 +24,6 @@ const {
     <Nav />
     <slot />
     <Footer />
+    <GetStartedForm />
   </body>
 </html>

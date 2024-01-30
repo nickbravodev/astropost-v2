@@ -1,0 +1,274 @@
+---
+
+---
+
+  <!-- "Get Started" off-canvas popout -->
+      <div
+        class="container offcanvas offcanvas-end bg-dark get-started-popout"
+        tabindex="-1"
+        id="get-started"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <!-- "Get Started" header -->
+        <div class="offcanvas-header bg-dark py-4">
+          <!-- Brand logo -->
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <div class="brand-icon">
+              <img
+                src="img/astropost-icon-red.svg"
+                alt="Astropost Logo"
+                srcset=""
+              />
+            </div>
+          </a>
+          <!-- "Get Started" header text -->
+          <div class="ms-3 me-auto">
+            <h2 class="get-started-heading">Get Started</h2>
+            <p class="get-started-subheading">
+              Fill out this form and send it over!
+            </p>
+          </div>
+          <!-- Close button -->
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <!-- "Get Started" body -->
+        <div id="get-started-body" class="row offcanvas-body bg-light d-flex">
+          <!-- "Get Started" form -->
+          <form
+            name="get-started-form"
+            id="get-started-form"
+            action="index.html#success"
+            method="post"
+            data-netlify="true"
+            onsubmit="submit"
+            data-netilfy-honeypot="bot-field"
+            class="needs-validation"
+            novalidate
+          >
+            <!-- Notification email subject line -->
+            <input
+              type="hidden"
+              name="subject"
+              value="Get Started submission at Astropost"
+            />
+            <!-- Robot honeypot. That rhymes! -->
+            <div class="d-none hidden">
+              <label>
+                Robot honeypot: Leave this field empty if you're human
+                <input name="bot-field" />
+              </label>
+            </div>
+            <div class="form-grid">
+              <!-- First name input -->
+              <div class="form-grid--1">
+                <label class="form-label visually-hidden" for="first-name"
+                  >First Name*</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  placeholder="First Name*"
+                  required
+                />
+              </div>
+              <!-- Last name input -->
+              <div class="form-grid--1">
+                <label class="form-label visually-hidden" for="last-name"
+                  >Last Name*</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  placeholder="Last Name*"
+                  required
+                />
+              </div>
+              <!-- Email input -->
+              <div class="form-grid--1">
+                <label class="form-label visually-hidden" for="email"
+                  >Email*</label
+                >
+                <input
+                  class="form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email*"
+                  required
+                />
+              </div>
+              <!-- Phone input -->
+              <div class="form-grid--1">
+                <label class="form-label visually-hidden" for="phone"
+                  >Phone</label
+                >
+                <input
+                  class="form-control"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone"
+                />
+              </div>
+              <!-- Company input -->
+              <div class="form-grid--2">
+                <label class="form-label visually-hidden" for="company"
+                  >Company</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company"
+                />
+              </div>
+              <!-- Website input -->
+              <div class="form-grid--2">
+                <label class="form-label visually-hidden" for="website"
+                  >Website</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="website"
+                  name="website"
+                  placeholder="Website"
+                />
+              </div>
+              <!-- Services checkbox input -->
+              <fieldset class="form-grid--1">
+                <legend class="text-dark">Services needed</legend>
+                <!-- Graphic Design / Branding -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="services"
+                      value="Graphic Design / Branding"
+                    />
+                    Graphic Design / Branding
+                  </label>
+                </div>
+                <!-- UI/UX Design -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="services"
+                      value="UI/UX Design"
+                    />
+                    UI/UX Design
+                  </label>
+                </div>
+                <!-- Static Site  -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="services"
+                      value="Static Site"
+                    />
+                    Static Site
+                  </label>
+                </div>
+                <!-- Dynamic Site  -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="services"
+                      value="Dynamic Site"
+                    />
+                    Dynamic Site
+                  </label>
+                </div>
+              </fieldset>
+              <!-- Estimated Budget -->
+              <fieldset class="form-grid--1">
+                <legend class="text-dark">Estimated budget</legend>
+                <!-- Under $10,000 -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="budget"
+                      value="Under $10,000"
+                    />
+                    Under $10,000
+                  </label>
+                </div>
+                <!-- $10,000 - $30,000 -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="budget"
+                      value="$10,000 - $30,000"
+                    />
+                    $10,000 - $30,000
+                  </label>
+                </div>
+                <!-- $30,000 - $50,000 -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="budget"
+                      value="$30,000 - $50,000"
+                    />
+                    $30,000 - $50,000
+                  </label>
+                </div>
+                <!-- Over $50,000 -->
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="budget"
+                      value="Over $50,000"
+                    />
+                    Over $50,000
+                  </label>
+                </div>
+              </fieldset>
+              <!-- Project Summary input -->
+              <div class="form-grid--2">
+                <label class="form-label visually-hidden" for="description"
+                  >Project Summary*</label
+                >
+                <textarea
+                  class="form-control"
+                  type="text"
+                  rows="3"
+                  id="description"
+                  name="message"
+                  placeholder="Project summary*"
+                  required
+                ></textarea>
+              </div>
+              <!-- Submit button -->
+              <div class="mb-4">
+                <button class="cta">Get started</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>

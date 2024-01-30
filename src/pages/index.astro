@@ -10,6 +10,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 // Component imports
 import HeroFull from '../components/heroes/HeroFull.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
 import WorkList from "../components/WorkList.astro";
 import WorkListFeatured from "../components/WorkListFeatured.astro";
 const works = await getCollection("works");
@@ -19,7 +20,6 @@ const works = await getCollection("works");
 import { Image } from 'astro:assets';
 import profileImage from "../img/nb-new.jpg";
 import homeHero from "../img/home-hero.png";
-import ContactForm from '../components/ContactForm.astro';
 ---
 
 <MainLayout

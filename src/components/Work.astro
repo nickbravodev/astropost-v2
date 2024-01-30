@@ -34,7 +34,7 @@ const {work} = Astro.props
       </div>
       <h3 class="one-line"><a href={`/work/${work.slug}`}>{work.data.title}</a></h3>
       
-      <p class="text-overflow">{work.body}</p>
+      <p class="text-overflow">{work.data.blurb}</p>
       <p class="text-overflow tech one-line">{work.data.tech}</p>
     </div>
 

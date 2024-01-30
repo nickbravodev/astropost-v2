@@ -1,274 +1,451 @@
 ---
+import {Icon} from "astro-icon/components";
+
 
 ---
 
   <!-- "Get Started" off-canvas popout -->
-      <div
-        class="container offcanvas offcanvas-end bg-dark get-started-popout"
+      <section
+        class="get-started-popout"
         tabindex="-1"
         id="get-started"
-        aria-labelledby="offcanvasRightLabel"
+        data-visible="false"
       >
-        <!-- "Get Started" header -->
-        <div class="offcanvas-header bg-dark py-4">
-          <!-- Brand logo -->
-          <a class="navbar-brand d-flex align-items-center" href="/">
-            <div class="brand-icon">
-              <img
-                src="img/astropost-icon-red.svg"
-                alt="Astropost Logo"
-                srcset=""
-              />
+        <div class="popout-wrapper">
+          <div class="popout-header">
+
+            <!-- Brand logo -->
+            <a class="popoutbar-brand" href="/">
+              <div class="brand-icon">
+                <Icon name="astropost-logo">
+              </div>
+            </a>
+
+            <!-- "Get Started" header text -->
+            <div class="ms-3 me-auto">
+              <h2 class="get-started-heading">Get Started</h2>
+              <p class="get-started-subheading">
+                Fill out this form and send it over!
+              </p>
             </div>
-          </a>
-          <!-- "Get Started" header text -->
-          <div class="ms-3 me-auto">
-            <h2 class="get-started-heading">Get Started</h2>
-            <p class="get-started-subheading">
-              Fill out this form and send it over!
-            </p>
+
+            <!-- Close button -->
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
           </div>
-          <!-- Close button -->
-          <button
-            type="button"
-            class="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
+
+          <!-- "Get Started" body -->
+          <div id="get-started-body" class="popout-body">
+            <!-- "Get Started" form -->
+            <form
+              name="get-started-form"
+              id="get-started-form"
+              action="/success"
+              method="POST"
+              data-netlify="true"
+              data-netilfy-honeypot="bot-field"
+            >
+              <!-- Notification email subject line -->
+              <input
+                type="hidden"
+                name="subject"
+                value="Get Started submission at Astropost"
+              />
+              <!-- Robot honeypot. -->
+              <div class="sr-only">
+                <label>
+                  Robot honeypot: Leave this field empty if you're human
+                  <input name="bot-field" />
+                </label>
+              </div>
+              <!-- <div class="form-grid"> -->
+                <div class="input-split">
+                  <!-- First name input -->
+                  <div>
+                    <label class="form-label sr-only" for="first-name"
+                      >First Name*</label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="first-name"
+                      name="first-name"
+                      placeholder="First Name*"
+                      required
+                    />
+                  </div>
+                  <!-- Last name input -->
+                  <div>
+                    <label class="form-label sr-only" for="last-name"
+                      >Last Name*</label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                      placeholder="Last Name*"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="input-split">
+                  <!-- Email input -->
+                  <div class="form-grid--1">
+                    <label class="form-label sr-only" for="email"
+                      >Email*</label
+                    >
+                    <input
+                      class="form-control"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email*"
+                      required
+                    />
+                  </div>
+                  <!-- Phone input -->
+                  <div class="form-grid--1">
+                    <label class="form-label sr-only" for="phone"
+                      >Phone</label
+                    >
+                    <input
+                      class="form-control"
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="Phone"
+                    />
+                  </div>
+                </div>
+                <!-- Company input -->
+                <div class="form-grid--2">
+                  <label class="form-label sr-only" for="company"
+                    >Company</label
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Company"
+                  />
+                </div>
+                <!-- Website input -->
+                <div class="form-grid--2">
+                  <label class="form-label sr-only" for="website"
+                    >Website</label
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="website"
+                    name="website"
+                    placeholder="Website"
+                  />
+                </div>
+                <div class="input-split">
+                  <!-- Services checkbox input -->
+                  <fieldset class="form-grid--1">
+                    <legend class="text-dark">Services needed</legend>
+                    <!-- Graphic Design / Branding -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="services"
+                          value="Graphic Design / Branding"
+                        />
+                        Graphic Design / Branding
+                      </label>
+                    </div>
+                    <!-- UI/UX Design -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="services"
+                          value="UI/UX Design"
+                        />
+                        UI/UX Design
+                      </label>
+                    </div>
+                    <!-- Static Site  -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="services"
+                          value="Static Site"
+                        />
+                        Static Site
+                      </label>
+                    </div>
+                    <!-- Dynamic Site  -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="services"
+                          value="Dynamic Site"
+                        />
+                        Dynamic Site
+                      </label>
+                    </div>
+                  </fieldset>
+                  <!-- Estimated Budget -->
+                  <fieldset class="form-grid--1">
+                    <legend class="text-dark">Estimated budget</legend>
+                    <!-- Under $10,000 -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="budget"
+                          value="Under $10,000"
+                        />
+                        Under $10,000
+                      </label>
+                    </div>
+                    <!-- $10,000 - $30,000 -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="budget"
+                          value="$10,000 - $30,000"
+                        />
+                        $10,000 - $30,000
+                      </label>
+                    </div>
+                    <!-- $30,000 - $50,000 -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="budget"
+                          value="$30,000 - $50,000"
+                        />
+                        $30,000 - $50,000
+                      </label>
+                    </div>
+                    <!-- Over $50,000 -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="budget"
+                          value="Over $50,000"
+                        />
+                        Over $50,000
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+                <!-- Project Summary input -->
+                <div class="form-grid--2">
+                  <label class="form-label sr-only" for="description"
+                    >Project Summary*</label
+                  >
+                  <textarea
+                    class="form-control"
+                    type="text"
+                    rows="3"
+                    id="description"
+                    name="message"
+                    placeholder="Project summary*"
+                    required
+                  ></textarea>
+                </div>
+                <!-- Submit button -->
+                <div class="mb-4">
+                  <button>Get started</button>
+                </div>
+              <!-- </div> -->
+            </form>
+          </div>
         </div>
-        <!-- "Get Started" body -->
-        <div id="get-started-body" class="row offcanvas-body bg-light d-flex">
-          <!-- "Get Started" form -->
-          <form
-            name="get-started-form"
-            id="get-started-form"
-            action="index.html#success"
-            method="post"
-            data-netlify="true"
-            onsubmit="submit"
-            data-netilfy-honeypot="bot-field"
-            class="needs-validation"
-            novalidate
-          >
-            <!-- Notification email subject line -->
-            <input
-              type="hidden"
-              name="subject"
-              value="Get Started submission at Astropost"
-            />
-            <!-- Robot honeypot. That rhymes! -->
-            <div class="d-none hidden">
-              <label>
-                Robot honeypot: Leave this field empty if you're human
-                <input name="bot-field" />
-              </label>
-            </div>
-            <div class="form-grid">
-              <!-- First name input -->
-              <div class="form-grid--1">
-                <label class="form-label visually-hidden" for="first-name"
-                  >First Name*</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  placeholder="First Name*"
-                  required
-                />
-              </div>
-              <!-- Last name input -->
-              <div class="form-grid--1">
-                <label class="form-label visually-hidden" for="last-name"
-                  >Last Name*</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="last-name"
-                  name="last-name"
-                  placeholder="Last Name*"
-                  required
-                />
-              </div>
-              <!-- Email input -->
-              <div class="form-grid--1">
-                <label class="form-label visually-hidden" for="email"
-                  >Email*</label
-                >
-                <input
-                  class="form-control"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                />
-              </div>
-              <!-- Phone input -->
-              <div class="form-grid--1">
-                <label class="form-label visually-hidden" for="phone"
-                  >Phone</label
-                >
-                <input
-                  class="form-control"
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Phone"
-                />
-              </div>
-              <!-- Company input -->
-              <div class="form-grid--2">
-                <label class="form-label visually-hidden" for="company"
-                  >Company</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company"
-                />
-              </div>
-              <!-- Website input -->
-              <div class="form-grid--2">
-                <label class="form-label visually-hidden" for="website"
-                  >Website</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="website"
-                  name="website"
-                  placeholder="Website"
-                />
-              </div>
-              <!-- Services checkbox input -->
-              <fieldset class="form-grid--1">
-                <legend class="text-dark">Services needed</legend>
-                <!-- Graphic Design / Branding -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="services"
-                      value="Graphic Design / Branding"
-                    />
-                    Graphic Design / Branding
-                  </label>
-                </div>
-                <!-- UI/UX Design -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="services"
-                      value="UI/UX Design"
-                    />
-                    UI/UX Design
-                  </label>
-                </div>
-                <!-- Static Site  -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="services"
-                      value="Static Site"
-                    />
-                    Static Site
-                  </label>
-                </div>
-                <!-- Dynamic Site  -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="services"
-                      value="Dynamic Site"
-                    />
-                    Dynamic Site
-                  </label>
-                </div>
-              </fieldset>
-              <!-- Estimated Budget -->
-              <fieldset class="form-grid--1">
-                <legend class="text-dark">Estimated budget</legend>
-                <!-- Under $10,000 -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="budget"
-                      value="Under $10,000"
-                    />
-                    Under $10,000
-                  </label>
-                </div>
-                <!-- $10,000 - $30,000 -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="budget"
-                      value="$10,000 - $30,000"
-                    />
-                    $10,000 - $30,000
-                  </label>
-                </div>
-                <!-- $30,000 - $50,000 -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="budget"
-                      value="$30,000 - $50,000"
-                    />
-                    $30,000 - $50,000
-                  </label>
-                </div>
-                <!-- Over $50,000 -->
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="budget"
-                      value="Over $50,000"
-                    />
-                    Over $50,000
-                  </label>
-                </div>
-              </fieldset>
-              <!-- Project Summary input -->
-              <div class="form-grid--2">
-                <label class="form-label visually-hidden" for="description"
-                  >Project Summary*</label
-                >
-                <textarea
-                  class="form-control"
-                  type="text"
-                  rows="3"
-                  id="description"
-                  name="message"
-                  placeholder="Project summary*"
-                  required
-                ></textarea>
-              </div>
-              <!-- Submit button -->
-              <div class="mb-4">
-                <button class="cta">Get started</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      </section>
+
+<script>
+  const getStarted = document.querySelector('#get-started');
+  const popoutTrigger = document.querySelector('#get-started-trigger');
+  const buttonClose = document.querySelector('.btn-close');
+  const modalDeploy = () => {
+    const visibility = getStarted.getAttribute('data-visible');
+
+    if (visibility === 'false') {
+      getStarted.setAttribute('data-visible', 'true'); // Opens NAV popout
+      popoutTrigger.setAttribute('aria-expanded', 'true'); 
+      buttonClose.setAttribute('aria-expanded', 'true'); 
+      document.body.classList.add('modal-open'); // Disables scrolling behavior on body
+    } else if (visibility === 'true') {
+      getStarted.setAttribute('data-visible', 'false'); // Opens NAV popout
+      popoutTrigger.setAttribute('aria-expanded', 'false'); 
+      buttonClose.setAttribute('aria-expanded', 'false'); 
+      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
+    }
+
+  };
+
+  popoutTrigger.addEventListener('click', modalDeploy);
+
+  buttonClose.addEventListener('click', modalDeploy);
+  
+  // ESC key to close nav on mobile
+  document.addEventListener('keydown', function (e) {
+    const visibility = getStarted.getAttribute('data-visible');
+    
+    if (e.key === 'Escape' && (visibility === 'true')) {
+      getStarted.setAttribute('data-visible', 'false');
+      popoutTrigger.setAttribute('aria-expanded', 'false');
+      buttonClose.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
+    }
+  });
+</script>
+
+<style lang="scss">
+// -----------
+// LIGHT MODE VARIABLES
+// -----------
+@mixin get-started-popout-light-mode {
+  // popout variables
+  --color-popout-bg-overlay: rgba(var(--color-astro-white-rgb), 0.85); // popout Background
+  --color-popout-bg: rgba(var(--color-astro-white-rgb), 1); // popout Background
+}
+
+// -----------
+// DARK MODE VARIABLES
+// -----------
+@mixin get-started-popout-dark-mode {
+  // popout variables
+  --color-popout-bg-overlay: rgba(var(--color-astro-black-rgb), 0.85); // popout Background
+  --color-popout-bg: rgba(var(--color-astro-black-rgb), 1); // popout Background
+}
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include get-started-popout-light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include get-started-popout-light-mode;
+}
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include get-started-popout-dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include get-started-popout-dark-mode;
+}
+
+  .get-started-popout {
+    position: fixed;
+    display: none;
+    align-items: flex-end;
+    // width: 100svw;
+    inset: 0;
+    background-color: var(--color-popout-bg-overlay);
+    // backdrop-filter: blur(0.7rem);
+    // -webkit-backdrop-filter: blur(0.7rem);
+    // overflow: scroll;
+    z-index: 10000;
+    padding: 0;
+    margin: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: calc(100% + 7rem);
+        top: 0;
+        left: 0;
+        margin-block-start: -7rem;
+        backdrop-filter: blur(0.7rem);
+        -webkit-backdrop-filter: blur(0.7rem);
+        z-index: -1;
+      }
+
+      &[data-visible="true"] {
+        display: flex;
+        transform: translateX(0%);
+      }
+  }
+  
+  .popout-wrapper {
+    width: min(50rem, 100%);
+    background-color: var(--color-popout-bg);
+    // padding-block-start: 16rem;
+    padding-inline: 2rem;
+    min-height: 100svh;
+    overflow: scroll;
+
+    form {
+      width: 100%;
+    }
+  }
+
+  .popout-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    gap: 1rem;
+    background-color: var(--color-popout-bg);
+    // padding-inline: 2rem;
+
+    h2, p {
+      margin: 0;
+    }
+
+    .brand-icon {
+      background-color: var(--color-astro-red);
+      aspect-ratio: 1;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+    }
+
+    .btn-close {
+      margin-inline-start: auto;
+    }
+  }
+
+  .popout-body {
+    display: flex;
+    width: 100%;
+    padding-block: 2rem;
+    // padding-block-start: 24rem;
+    // padding-block-end: 4rem;
+  }
+
+  .input-split {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    & > * {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+</style>

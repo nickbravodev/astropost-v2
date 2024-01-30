@@ -37,7 +37,7 @@ const navData = [
   },
   {
     name: "Start Your Project",
-    path: "#resume",
+    id: "get-started-trigger",
   },
 ];
 

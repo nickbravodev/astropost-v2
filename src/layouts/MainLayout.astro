@@ -3,11 +3,12 @@
 import MainHead from "./MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import GetStartedForm from "../components/forms/GetStartedForm.astro";
+import ContactForm from "../components/forms/ContactForm.astro";
 
 // Style import
 import "../css/global.scss";
 import LightDarkToggle from "../components/LightDarkToggle.astro";
-import GetStartedForm from "../components/forms/GetStartedForm.astro";
 
 const {
   title = "Websites. Graphics. Content. For businesses who respect privacy. - Astropost",
@@ -22,7 +23,11 @@ const {
   <body>
     <LightDarkToggle />
     <Nav />
-    <slot />
+    <main>
+      <slot />
+    </main>
+
+    <ContactForm />
     <Footer />
     <GetStartedForm />
   </body>

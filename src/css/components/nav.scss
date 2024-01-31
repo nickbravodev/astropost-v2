@@ -5,13 +5,10 @@
   // Nav variables
   --color-nav-bg: rgba(var(--color-astro-black-rgb), 0.85); // Nav Background
   --color-nav-bg-solid: rgba(var(--color-astro-black-rgb), 1); // Nav Background
-  --color-nav-btn-bg-hover: var(
-    --color-astro-white
-  ); // Nav Button Hover Background
+  --color-nav-btn-bg-hover: var(--color-astro-white); // Nav Button Hover Background
   --color-nav-link-color: var(--color-astro-white);
   --color-nav-link-hover-color: var(--color-astro-white);
   --color-nav-link-button-hover-color: var(--color-astro-black);
-  --brand-icon: var(--bravo-light-100); // Brand Icon Color
   --color-logo-box: var(--color-astro-black);
 }
 
@@ -21,17 +18,11 @@
 @mixin nav-dark-mode {
   // Nav variables
   --color-nav-bg: rgba(var(--color-astro-black-rgb), 0.85); // Nav Background
-  --color-nav-bg-solid: rgba(
-    var(--color-astro-black-rgb),
-    0.85
-  ); // Nav Background
-  --color-nav-btn-bg-hover: var(
-    --color-astro-white
-  ); // Nav Button Hover Background
+  --color-nav-bg-solid: rgba(var(--color-astro-black-rgb), 0.85); // Nav Background
+  --color-nav-btn-bg-hover: var(--color-astro-white); // Nav Button Hover Background
   --color-nav-link-color: var(--color-astro-white);
   --color-nav-link-hover-color: var(--color-astro-white);
   --color-nav-link-button-hover-color: var(--color-astro-black);
-  --brand-icon: var(--mav-red); // Brand Icon Color
   --color-logo-box: var(--color-astro-red);
 }
 // Execute Light Mode
@@ -271,8 +262,7 @@ header {
       color: var(--color-nav-link-hover-color);
       background-color: transparent;
       text-decoration: none;
-      outline: var(--border-width) solid
-        var(--color-nav-link-button-hover-color);
+      outline: var(--border-width) solid var(--color-nav-link-button-hover-color);
       outline-offset: 0.25rem;
       border-radius: 0.1rem;
     }

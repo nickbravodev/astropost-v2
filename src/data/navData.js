@@ -37,6 +37,7 @@ const navData = [
   },
   {
     name: "Start Your Project",
+    classes: "get-started-trigger",
     id: "get-started-trigger",
   },
 ];

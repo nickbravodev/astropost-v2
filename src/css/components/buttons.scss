@@ -55,6 +55,7 @@
 button,
 input[type="submit"],
 .button {
+  cursor: pointer;
   color: var(--color-btn-primary-text);
   background-color: var(--color-btn-primary);
   border: var(--border-width) solid var(--color-btn-primary);

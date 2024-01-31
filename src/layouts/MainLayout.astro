@@ -14,12 +14,11 @@ const {
   title = "Websites. Graphics. Content. For businesses who respect privacy. - Astropost",
   description = "We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy.",
   og_image = "https://astropost.io/images/opengraph.png",
-  og_url = "https://astropost.io/",
 } = Astro.props;
 ---
 
 <html lang="en" prefix="og: https://ogp.me/ns#">
-  <MainHead {title} {description} {og_image} {og_url} />
+  <MainHead {title} {description} {og_image} />
   <body>
     <LightDarkToggle />
     <Nav />

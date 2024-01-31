@@ -9,6 +9,7 @@
   --color-nav-link-color: var(--color-astro-white);
   --color-nav-link-hover-color: var(--color-astro-white);
   --color-nav-link-button-hover-color: var(--color-astro-black);
+  --brand-icon: var(--bravo-light-100); // Brand Icon Color
   --color-logo-box: var(--color-astro-black);
 }
 
@@ -23,6 +24,7 @@
   --color-nav-link-color: var(--color-astro-white);
   --color-nav-link-hover-color: var(--color-astro-white);
   --color-nav-link-button-hover-color: var(--color-astro-black);
+  --brand-icon: var(--mav-red); // Brand Icon Color
   --color-logo-box: var(--color-astro-red);
 }
 // Execute Light Mode
@@ -284,7 +286,6 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0;
-    // border-radius: var(--border-radius-sm);
   }
 
   svg {

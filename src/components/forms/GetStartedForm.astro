@@ -149,18 +149,6 @@ import {Icon} from "astro-icon/components";
                   <!-- Services checkbox input -->
                   <fieldset class="form-grid--1">
                     <legend class="text-dark">Services needed</legend>
-                    <!-- Graphic Design / Branding -->
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="services"
-                          value="Graphic Design / Branding"
-                        />
-                        Graphic Design / Branding
-                      </label>
-                    </div>
                     <!-- UI/UX Design -->
                     <div class="form-check">
                       <label class="form-check-label">
@@ -173,7 +161,7 @@ import {Icon} from "astro-icon/components";
                         UI/UX Design
                       </label>
                     </div>
-                    <!-- Static Site  -->
+                    <!-- Static Site -->
                     <div class="form-check">
                       <label class="form-check-label">
                         <input
@@ -197,32 +185,32 @@ import {Icon} from "astro-icon/components";
                         Dynamic Site
                       </label>
                     </div>
+                    <!-- Special Features  -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="services"
+                          value="Special Features"
+                        />
+                        Special Features
+                      </label>
+                    </div>
                   </fieldset>
                   <!-- Estimated Budget -->
                   <fieldset class="form-grid--1">
                     <legend class="text-dark">Estimated budget</legend>
-                    <!-- Under $10,000 -->
+                    <!-- Under $30,000 -->
                     <div class="form-check">
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
                           type="radio"
                           name="budget"
-                          value="Under $10,000"
+                          value="Under $30,000"
                         />
-                        Under $10,000
-                      </label>
-                    </div>
-                    <!-- $10,000 - $30,000 -->
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="budget"
-                          value="$10,000 - $30,000"
-                        />
-                        $10,000 - $30,000
+                        Under $30,000
                       </label>
                     </div>
                     <!-- $30,000 - $50,000 -->
@@ -237,16 +225,28 @@ import {Icon} from "astro-icon/components";
                         $30,000 - $50,000
                       </label>
                     </div>
-                    <!-- Over $50,000 -->
+                    <!-- $50,000 - $100,000 -->
                     <div class="form-check">
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
                           type="radio"
                           name="budget"
-                          value="Over $50,000"
+                          value="$50,000 - $100,000"
                         />
-                        Over $50,000
+                        $50,000 - $100,000
+                      </label>
+                    </div>
+                    <!-- Over $100,000 -->
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="budget"
+                          value="Over $100,000"
+                        />
+                        Over $100,000
                       </label>
                     </div>
                   </fieldset>

@@ -30,10 +30,4 @@ export default defineConfig({
     }),
   ],
   // lighthouse(),
-  redirects: {
-    "work.nickbravo.dev": {
-      status: 301,
-      destination: "/work",
-    },
-  },
 });

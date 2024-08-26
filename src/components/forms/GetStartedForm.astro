@@ -276,42 +276,60 @@ import {Icon} from "astro-icon/components";
         </div>
       </section>
 
-<script>
+<script is:inline>
   const getStarted = document.querySelector('#get-started');
   const popoutTrigger = document.querySelectorAll('.get-started-trigger');
   // const popoutTriggerID = document.querySelector('#get-started-trigger');
   const buttonClose = document.querySelector('.btn-close');
+  
 
-  const modalDeploy = () => {
+  const popout = document.querySelector('.get-started-popout');
+
+  // Open popout
+  const modalOpen = () => {
+    document.body.classList.add('modal-open'); // Disables scrolling behavior on body
+    getStarted.setAttribute('data-visible', 'true'); 
+    popoutTrigger.setAttribute('aria-expanded', 'true'); 
+    buttonClose.setAttribute('aria-expanded', 'true'); 
+  }
+
+  // Close popout
+  const modalClose = () => {
+    document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
+    getStarted.setAttribute('data-visible', 'false'); 
+    popoutTrigger.setAttribute('aria-expanded', 'false'); 
+    buttonClose.setAttribute('aria-expanded', 'false'); 
+  }
+
+  // Control popout - open/close toggle
+  const modalDeploy = (e) => {
     const visibility = getStarted.getAttribute('data-visible');
-
+    e.preventDefault();
     if (visibility === 'false') {
-      document.body.classList.add('modal-open'); // Disables scrolling behavior on body
-      getStarted.setAttribute('data-visible', 'true'); // Opens NAV popout
-      popoutTrigger.setAttribute('aria-expanded', 'true'); 
-      buttonClose.setAttribute('aria-expanded', 'true'); 
+      modalOpen(); // Open popout
     } else if (visibility === 'true') {
-      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
-      getStarted.setAttribute('data-visible', 'false'); // Opens NAV popout
-      popoutTrigger.setAttribute('aria-expanded', 'false'); 
-      buttonClose.setAttribute('aria-expanded', 'false'); 
+      modalClose(); // Close popout
     }
   };
 
+  // Popout trigger - opens popout
   popoutTrigger.forEach(trigger => trigger.addEventListener('click', modalDeploy));
 
-  // for (let i = 0; i < popoutTrigger.length; i++) {
-  //   popoutTrigger[i].addEventListener('click', modalDeploy);
-  // }
-
-  // popoutTriggerID.addEventListener('click', modalDeploy);
-
-
-
-
-
-
+  // Close button - closes popout
   buttonClose.addEventListener('click', modalDeploy);
+
+  // Closes popout when clicked outside popout wrapper
+  popout.addEventListener('click', (e) => {
+    const visibility = getStarted.getAttribute('data-visible');
+    const popoutWrapper = e.target.closest(".popout-wrapper");
+    if (visibility === 'false') {
+      return;
+    } else if (visibility === 'true') {
+      if (!popoutWrapper) {
+        modalClose();
+      }
+  }
+})
   
   // ESC key to close nav on mobile
   document.addEventListener('keydown', function (e) {

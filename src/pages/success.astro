@@ -1,32 +1,13 @@
 ---
 export const prerender = true;
 
-// Library imports
-import { Icon } from 'astro-icon/components';
-import { getCollection } from "astro:content";
-
 // Layout imports
 import MainLayout from "../layouts/MainLayout.astro";
-
-// Component imports
-import HeroFull from '../components/heroes/HeroFull.astro';
-import WorkList from "../components/WorkList.astro";
-import WorkListFeatured from "../components/WorkListFeatured.astro";
-const works = await getCollection("works");
-// import Button from '../components/Button.astro';
-
-// Image imports
-import { Image } from 'astro:assets';
-import profileImage from "../img/nb-new.jpg";
-import homeHero from "../img/home-hero.png";
-import ContactForm from '../components/forms/ContactForm.astro';
 ---
 
 <MainLayout
-  title="Websites. Graphics. Content. For businesses who respect privacy. - Astropost"
-  description="We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy."
-  og_image="https://astropost.io/images/opengraph.png"
-  og_url="https://astropost.io/"
+  title="Thanks for reaching out!"
+  description="Thanks for reaching out!"
 >
   <main>
 

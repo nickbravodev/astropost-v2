@@ -11,14 +11,15 @@ import "../css/global.scss";
 import LightDarkToggle from "../components/LightDarkToggle.astro";
 
 const {
-  title = "Websites. Graphics. Content. For businesses who respect privacy. - Astropost",
+  title = "Websites. Graphics. Content. For businesses who respect privacy.",
+  title_tag = "Astropost",
   description = "We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy.",
-  og_image = "https://astropost.io/images/opengraph.png",
+  og_image = "images/opengraph.png",
 } = Astro.props;
 ---
 
 <html lang="en" prefix="og: https://ogp.me/ns#">
-  <MainHead {title} {description} {og_image} />
+  <MainHead {title} {title_tag} {description} {og_image} />
   <body>
     <LightDarkToggle />
     <Nav />

@@ -6,7 +6,7 @@ import robotsTxt from "astro-robots-txt";
 import htmlBeautifier from "astro-html-beautifier";
 import icon from "astro-icon";
 import netlify from "@astrojs/netlify";
-// import lighthouse from "astro-lighthouse";
+import lighthouse from "astro-lighthouse";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +28,6 @@ export default defineConfig({
       space_in_empty_paren: false,
       wrap_line_length: 0,
     }),
+    lighthouse(),
   ],
-  // lighthouse(),
 });

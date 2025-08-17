@@ -1,0 +1,156 @@
+---
+
+---
+
+  <!-- Contact section -->
+    <section id="contact">
+      <div class="contact-wrapper">
+        <div>
+          <!-- Contact text -->
+          <h2>Get in touch.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading">
+            Got a question? Send us a message.
+          </p>
+        </div>
+
+        <iframe id="fluentform" width="100%" loading="lazy" height="500px" style="min-height: 500px; width: 100%;" frameborder="0" src="https://support.astropost.io/?ff_landing=3&embedded=1" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+40)+'px';"></iframe>
+        
+      </div>
+    </section>
+
+    <style lang="scss">
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 3rem;
+        margin-block-start: 8rem;
+        
+        @media screen and (min-width: 768px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        @media screen and (min-width: 992px) {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+      }
+
+      iframe {
+        overflow: hidden;
+      }
+
+      #fluentform  {
+        background-color: red;
+
+        #ff_3_names_first_name_,
+        .ff-el-form-control {
+          height: 100%;
+          background-color: red !important;
+          border: 2px solid red !important;
+        }
+
+        // // Forms
+        // .form-input,
+        // .form-textarea,
+        // input,
+        // textarea {
+        //   color: var(--color-txt);
+        //   background-color: var(--color-form-bg);
+        //   width: 100%;
+        //   height: 100% !important;
+        //   box-sizing: border-box;
+        //   border: 0.15rem solid var(--color-txt);
+        //   border-radius: var(--border-radius);
+        //   padding: 0.7rem;
+        //   outline: none;
+        // }
+
+        // .form-input:focus,
+        // .form-textarea:focus,
+        // input:focus,
+        // textarea:focus {
+        //   background-color: var(--color-bg);
+        //   border: 0.15rem solid var(--color-txt);
+        // }
+
+        // .form-input::placeholder,
+        // .form-textarea::placeholder,
+        // input::placeholder,
+        // textarea::placeholder {
+        //   color: var(--color-txt-body-variant);
+        // }
+
+        // input[type="checkbox"],
+        // input[type="radio"] {
+        //   --_input-size: 1.5rem;
+        //   width: var(--_input-size);
+        //   height: var(--_input-size);
+
+        //   // &:hover,
+        //   // &:focus {
+        //   // }
+
+        //   &:checked {
+        //     accent-color: var(--color-astro-red);
+
+        //     // &:hover,
+        //     // &:focus {
+        //     // }
+        //   }
+
+        //   // &:after {
+        //   //   content: "";
+        //   //   background-color: red;
+        //   //   position: absolute;
+        //   //   display: none;
+        //   // }
+        // }
+
+        // fieldset {
+        //   display: flex;
+        //   flex-direction: column;
+        //   align-items: flex-start;
+        //   justify-content: center;
+        //   gap: var(--spacer-3);
+        //   margin: 0;
+        //   padding-inline: var(--spacer-6);
+        //   padding-block: 0.5rem;
+        //   // height: 12rem;
+        // }
+
+        // .form-check {
+        //   display: flex;
+        //   // width: 100%;
+
+        //   .form-check-label {
+        //     width: 100%;
+        //     display: flex;
+        //     gap: var(--spacer-5);
+        //     justify-content: flex-start;
+        //   }
+        // }
+
+        // .form-success {
+        //   background-color: var(--color-txt-heading);
+        // }
+
+        // .form-success-title {
+        //   color: var(--color-txt-heading);
+        //   font: 700 1.5rem/130% var(--font-family-base), sans-serif;
+        // }
+
+        // .form-success-text {
+        //   color: var(--color-txt-body-variant);
+        //   font: 500 1.2rem/130% var(--font-family-base), sans-serif;
+        // }
+
+        // // .form-check-label {
+        // //   display: flex;
+        // //   flex-direction: row;
+        // //   border: 2px solid red;
+        // // }
+      }
+    </style>
